@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aqua Cats | Luxury Private At-Home Swim Lessons & Lifeguarding</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'],
+                    },
+                    colors: {
+                        royal: {
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            200: '#bcdffd',
+                            300: '#7ec3fc',
+                            400: '#3aa2f8',
+                            500: '#1083e4', 
+                            600: '#0565bd',
+                            700: '#055099',
+                            800: '#09447e',
+                            900: '#0d3a69',
+                            950: '#082142', // Deep Midnight Navy
+                        },
+                        ice: {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            200: '#99f6e4',
+                            300: '#5eead4',
+                            400: '#2dd4bf',
+                            500: '#06b6d4', // Crisp Azure Mint
+                            600: '#0891b2',
+                            700: '#0e7490',
+                        },
+                        sand: {
+                            warm: '#fbfaf7',
+                            soft: '#f5f2eb',
+                            dark: '#e3ded5',
+                        }
+                    },
+                    animation: {
+                        'wave-slow': 'wave 25s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite',
+                        'wave-medium': 'wave 18s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite',
+                        'wave-fast': 'wave 12s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite',
+                        'bounce-slow': 'bounce 4s infinite',
+                        'float-subtle': 'floatSubtle 8s ease-in-out infinite',
+                        'swim': 'swim-motion 4s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        wave: {
+                            '0%': { transform: 'translateX(0)' },
+                            '50%': { transform: 'translateX(-25%)' },
+                            '100%': { transform: 'translateX(-50%)' }
+                        },
+                        floatSubtle: {
+                            '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-10px) rotate(1.5deg)' }
+                        },
+                        'swim-motion': {
+                            '0%, 100%': { transform: 'translateY(0) rotate(1.5deg)' },
+                            '50%': { transform: 'translateY(-5px) rotate(-1.5deg)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background-color: #fbfaf7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Transparent to Frosted Navy Glass header on scroll */
+        header.scrolled {
+            background-color: rgba(8, 33, 66, 0.95);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            height: 4.5rem;
+        }
+
+        /* Ambient bubble stream mechanics */
+        .bubble {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.22);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            border-radius: 50%;
+            pointer-events: none;
+            bottom: -50px;
+            animation: rise 11s infinite ease-in;
+        }
+        @keyframes rise {
+            0% {
+                transform: translateY(0) scale(0.6);
+                opacity: 0;
+            }
+            15% {
+                opacity: 0.5;
+            }
+            85% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(-105vh) scale(1.1);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden text-slate-800">
+
+    <!-- Top Alert Bar -->
+    <div class="bg-royal-950/95 text-sky-200 py-2.5 px-4 text-center text-[11px] tracking-widest font-semibold uppercase relative z-50 border-b border-white/5">
+        <span class="inline-flex items-center gap-2">
+            <span class="bg-sky-500/20 text-sky-300 px-2 rounded text-[9px] tracking-widest font-bold">PRIVATE RESIDENCES</span> 
+            EXCLUSIVE AT-HOME SWIM INSTRUCTION & PROFESSIONAL LIFEGUARD SERVICES
+        </span>
+    </div>
+
+    <!-- Absolute Transparent Floating Navigation Header -->
+    <header class="fixed top-10 left-0 w-full z-40 h-24 flex items-center justify-between transition-all duration-500">
+        <div class="max-w-7xl mx-auto w-full px-6 lg:px-12 flex items-center justify-between">
+            
+            <!-- Brand Emblem -->
+            <a href="#" class="flex items-center gap-3.5 group">
+                <div class="relative w-14 h-14 rounded-full overflow-hidden border border-white/20 bg-white/10 backdrop-blur-md group-hover:scale-105 transition-transform duration-500 shadow-xl">
+                    <img src="http://folktalesanpedro.org/wp-content/uploads/2026/06/qtq_95.webp" 
+                         alt="Aqua Cats Crest" 
+                         class="w-full h-full object-cover"
+                         onerror="this.src='https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&q=80&w=150'">
+                </div>
+                <div class="text-left">
+                    <span class="text-2xl font-black tracking-tight text-white block leading-none">
+                        Aqua Cats
+                    </span>
+                    <span class="block text-[9px] uppercase tracking-[0.25em] font-bold text-sky-300">Miami Private Academy</span>
+                </div>
+            </a>
+
+            <!-- High-End Desktop Navigation matching your exact options -->
+            <nav class="hidden xl:flex items-center gap-6 text-[11px] uppercase tracking-widest font-bold text-white/90">
+                <a href="#" class="hover:text-sky-300 transition-colors">Home</a>
+                <a href="#mission" class="hover:text-sky-300 transition-colors">Mission</a>
+                <a href="#lessons" class="hover:text-sky-300 transition-colors">Lessons</a>
+                <a href="#approach" class="hover:text-sky-300 transition-colors">Our Approach</a>
+                <button onclick="openRegisterModal()" class="hover:text-sky-300 transition-colors text-left uppercase">Register to Swim</button>
+                <a href="#lifeguard" class="hover:text-sky-300 transition-colors">Book a Lifeguard</a>
+                <a href="#portal" class="bg-white/10 hover:bg-white/25 px-4 py-2 rounded-full border border-white/20 transition-all text-white">Go To My Client Portal</a>
+            </nav>
+
+            <!-- Mobile Navigation Toggle Button -->
+            <div class="xl:hidden flex items-center gap-3">
+                <button onclick="toggleMobileMenu()" class="text-white hover:text-sky-300 p-2 text-2xl" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars-staggered"></i>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Slide-out Mobile Menu Panel -->
+    <div id="mobileMenu" class="fixed inset-0 bg-royal-950/95 backdrop-blur-lg z-50 transform translate-x-full transition-transform duration-300 flex flex-col justify-between p-8">
+        <div>
+            <div class="flex items-center justify-between mb-12">
+                <span class="text-xl font-bold tracking-widest text-sky-300 uppercase">Navigation</span>
+                <button onclick="toggleMobileMenu()" class="text-white text-3xl hover:text-sky-300"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <nav class="flex flex-col gap-6 text-sm uppercase tracking-widest font-bold text-white">
+                <a href="#" onclick="toggleMobileMenu()" class="hover:text-sky-300 py-2 border-b border-white/5">Home</a>
+                <a href="#mission" onclick="toggleMobileMenu()" class="hover:text-sky-300 py-2 border-b border-white/5">Mission</a>
+                <a href="#lessons" onclick="toggleMobileMenu()" class="hover:text-sky-300 py-2 border-b border-white/5">Lessons</a>
+                <a href="#approach" onclick="toggleMobileMenu()" class="hover:text-sky-300 py-2 border-b border-white/5">Our Approach</a>
+                <button onclick="toggleMobileMenu(); openRegisterModal()" class="text-left hover:text-sky-300 py-2 border-b border-white/5 uppercase font-bold text-white">Register to Swim</button>
+                <a href="#lifeguard" onclick="toggleMobileMenu()" class="hover:text-sky-300 py-2 border-b border-white/5">Book a Lifeguard</a>
+                <a href="#portal" onclick="toggleMobileMenu()" class="hover:text-sky-300 py-2">Go To My Client Portal</a>
+            </nav>
+        </div>
+        <div class="space-y-4">
+            <a href="tel:7865186500" class="block text-center w-full bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold py-3.5 rounded-full text-xs uppercase tracking-widest">
+                Call: 786 518 6500
+            </a>
+            <p class="text-center text-[10px] text-white/40 tracking-wider">AquaCats Mobile Swim Academy © 2026</p>
+        </div>
+    </div>
+
+    <!-- Video Background Hero Section -->
+    <section class="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-royal-950">
+        
+        <div class="absolute inset-0 w-full h-full object-cover pointer-events-none overflow-hidden">
+            <video class="absolute min-w-full min-h-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 object-cover scale-105 opacity-60" 
+                   autoplay muted loop playsinline id="heroVideo">
+                <source src="http://folktalesanpedro.org/wp-content/uploads/2026/06/openart-f4948094ae3ee271c1603171eae8dd45-2d85b2a7-c531-4a8d-be69-681e3d5a65b9_1779235046839_e72ae4ef.mp4" type="video/mp4">
+            </video>
+            <!-- Sleek color-grading deep dark luxury overlay -->
+            <div class="absolute inset-0 bg-gradient-to-b from-royal-950/70 via-royal-950/60 to-royal-950/95 mix-blend-multiply"></div>
+        </div>
+
+        <!-- Ambient Bubbles -->
+        <div class="absolute inset-0 pointer-events-none" id="heroBubbles"></div>
+
+        <!-- Hero Copy Content (Helvetica Focus) -->
+        <div class="relative z-10 max-w-5xl mx-auto px-6 text-center text-white pt-24 pb-12 flex flex-col items-center">
+            
+            <div class="inline-flex items-center gap-2.5 bg-white/5 backdrop-blur-lg px-5 py-2 rounded-full border border-white/10 mb-8 animate-float-subtle">
+                <span class="h-1.5 w-1.5 rounded-full bg-sky-400"></span>
+                <span class="text-[10px] uppercase tracking-[0.4em] font-bold text-sky-200">The Gold Standard of Home Aquatics</span>
+            </div>
+
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-light tracking-tight leading-[0.95] mb-6 max-w-4xl drop-shadow-2xl">
+                At Home <br><span class="font-bold text-sky-200">Swim Lessons</span>
+            </h1>
+            
+            <p class="text-sm md:text-lg tracking-[0.2em] uppercase font-light text-slate-300 max-w-2xl mb-12">
+                A school, a home, <span class="text-white font-medium">a lifestyle.</span>
+            </p>
+
+            <!-- Ultra-clean controls -->
+            <div class="flex flex-col sm:flex-row items-center gap-5 w-full justify-center max-w-md">
+                <button onclick="openRegisterModal()" class="w-full sm:w-auto bg-white hover:bg-slate-100 text-royal-950 text-xs font-bold uppercase tracking-widest px-10 py-5 rounded-full shadow-2xl hover:shadow-white/10 hover:-translate-y-1 transition-all duration-300">
+                    Register to Swim
+                </button>
+                <a href="#lessons" class="w-full sm:w-auto text-center bg-white/10 backdrop-blur-md hover:bg-white/20 text-white border border-white/20 text-xs font-bold uppercase tracking-widest px-10 py-5 rounded-full transition-all duration-300">
+                    Explore Curriculums
+                </a>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="mt-20 flex flex-col items-center animate-bounce cursor-pointer" onclick="document.getElementById('swim-animation-lane').scrollIntoView();">
+                <span class="text-[10px] tracking-[0.3em] text-white/40 uppercase mb-3">Scroll to discover</span>
+                <div class="w-[1px] h-12 bg-gradient-to-b from-sky-400 to-transparent"></div>
+            </div>
+        </div>
+
+        <!-- Premium Liquid CSS Wave Transition (Bottom curve) -->
+        <div class="absolute bottom-0 left-0 w-full z-20 h-28 overflow-hidden pointer-events-none">
+            <svg class="absolute bottom-0 w-full h-28" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <g class="parallax">
+                    <use href="#gentle-wave" x="48" y="0" fill="rgba(251,250,247,0.3)" class="animate-wave-slow" />
+                    <use href="#gentle-wave" x="48" y="3" fill="rgba(16,131,228,0.15)" class="animate-wave-medium" />
+                    <use href="#gentle-wave" x="48" y="5" fill="rgba(8,145,178,0.1)" class="animate-wave-fast" />
+                    <use href="#gentle-wave" x="48" y="7" fill="#fbfaf7" />
+                </g>
+            </svg>
+        </div>
+    </section>
+
+    <!-- SCROLL SWIMMING CAT ANIMATION -->
+    <div id="swim-animation-lane" class="relative py-14 bg-sand-warm border-b border-sand-soft overflow-hidden">
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-8">
+                <span class="text-[10px] uppercase tracking-[0.3em] font-extrabold text-royal-600 block mb-2">Aquatic Progress Journey</span>
+                <h3 class="text-2xl md:text-3xl font-medium tracking-tight text-royal-950">
+                    Scroll down to see our kitten swimmer glide safely across the pool
+                </h3>
+            </div>
+
+            <!-- Swim Track Box -->
+            <div class="relative w-full h-28 bg-gradient-to-r from-royal-50 to-sky-50/50 rounded-full border border-royal-100 overflow-hidden flex items-center px-4 shadow-inner">
+                
+                <!-- Bubbles stream inside track -->
+                <div class="absolute inset-0 flex justify-around items-center opacity-30">
+                    <div class="w-2 h-2 bg-royal-400 rounded-full animate-ping"></div>
+                    <div class="w-3 h-3 bg-sky-300 rounded-full animate-ping" style="animation-delay: 1.5s;"></div>
+                    <div class="w-1.5 h-1.5 bg-royal-300 rounded-full animate-ping" style="animation-delay: 0.8s;"></div>
+                </div>
+
+                <!-- Scrolling Floating Swimming Cat SVG Avatar (Scrolls to the right as page scrolls past) -->
+                <div id="swimmingCat" class="absolute left-0 transition-all duration-300 ease-out animate-swim flex flex-col items-center select-none" style="transform: translateX(0%); transition: transform 0.1s ease-out;">
+                    
+                    <div class="relative w-16 h-16 filter drop-shadow-lg">
+                        <!-- Snorkel Mask -->
+                        <div class="absolute top-3 left-5 w-6 h-4 bg-sky-200/80 border border-sky-500 rounded-full z-20 flex items-center justify-center">
+                            <div class="w-1 h-1 bg-white rounded-full absolute top-0.5 left-1"></div>
+                        </div>
+                        <div class="absolute top-1 left-8 w-1 h-5 bg-sky-500 rounded-full z-20 origin-bottom rotate-12"></div>
+                        <!-- Cat Vector -->
+                        <svg viewBox="0 0 100 100" class="w-full h-full text-amber-500">
+                            <!-- Cat Face / Head -->
+                            <circle cx="50" cy="50" r="26" fill="#D97706" />
+                            <!-- Ears -->
+                            <polygon points="28,30 36,8 44,30" fill="#D97706" />
+                            <polygon points="31,27 36,12 41,27" fill="#F87171" />
+                            <polygon points="56,30 64,8 72,30" fill="#D97706" />
+                            <polygon points="59,27 64,12 69,27" fill="#F87171" />
+                            <!-- Whiskers -->
+                            <line x1="18" y1="52" x2="34" y2="52" stroke="#FFF" stroke-width="1.5" />
+                            <line x1="18" y1="47" x2="34" y2="49" stroke="#FFF" stroke-width="1.5" />
+                            <line x1="82" y1="52" x2="66" y2="52" stroke="#FFF" stroke-width="1.5" />
+                            <line x1="82" y1="47" x2="66" y2="49" stroke="#FFF" stroke-width="1.5" />
+                            <!-- Nose -->
+                            <polygon points="47,50 53,50 50,53" fill="#EF4444" />
+                            <!-- Smile -->
+                            <path d="M45,55 Q50,60 55,55" fill="none" stroke="#78350F" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                        <!-- Sleek Light Blue Float Ring -->
+                        <div class="absolute bottom-1 left-2 w-12 h-6 bg-sky-300 border border-sky-400 rounded-full opacity-90 z-10"></div>
+                    </div>
+                    <span class="bg-royal-950 text-white font-medium text-[9px] tracking-widest uppercase px-2.5 py-0.5 rounded-full mt-1 shadow-md whitespace-nowrap">
+                        Paddles the Swim Cat
+                    </span>
+                </div>
+
+                <!-- Goal marker -->
+                <div class="absolute right-6 flex items-center gap-2 text-royal-800 font-bold text-[10px] tracking-widest uppercase bg-white border border-royal-100 rounded-full px-4 py-2 shadow-sm">
+                    <i class="fa-solid fa-anchor text-royal-500"></i>
+                    <span>Private Pool Goal</span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- MISSION VALUE PROOF SECTION -->
+    <section id="mission" class="py-24 bg-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                
+                <!-- Stat Card Column -->
+                <div class="lg:col-span-5 relative">
+                    <div class="absolute -top-12 -left-12 w-48 h-48 bg-royal-100/40 rounded-full filter blur-2xl"></div>
+                    <div class="absolute -bottom-12 -right-12 w-48 h-48 bg-sky-100/40 rounded-full filter blur-2xl"></div>
+                    
+                    <div class="relative bg-sand-warm border border-sand-dark/30 rounded-3xl p-10 shadow-2xl overflow-hidden group">
+                        <div class="absolute top-0 right-0 bg-royal-950 text-sky-200 px-6 py-2.5 rounded-bl-3xl text-[9px] font-bold uppercase tracking-[0.2em]">
+                            Statistical Insights
+                        </div>
+
+                        <div class="mb-6">
+                            <span class="text-8xl font-black text-royal-950 block">50%</span>
+                            <span class="block text-sm font-bold text-royal-700 tracking-widest uppercase mt-1">Accelerated Learning Slope</span>
+                        </div>
+
+                        <p class="text-slate-600 leading-relaxed text-sm">
+                            Children who take private swim lessons at home learn to swim up to <strong>50% faster</strong> than in traditional group settings. Personal attention in a completely familiar domestic environment removes high-pressure stimuli, letting students grasp safety and posture naturally.
+                        </p>
+
+                        <div class="mt-8 pt-8 border-t border-sand-dark/40 flex items-center gap-4">
+                            <div class="flex -space-x-3">
+                                <img class="w-10 h-10 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1502685750461-1599b02441e8?auto=format&fit=crop&q=80&w=100" alt="alumni">
+                                <img class="w-10 h-10 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=100" alt="alumni">
+                                <img class="w-10 h-10 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100" alt="alumni">
+                            </div>
+                            <div>
+                                <span class="block text-[10px] font-bold text-slate-400 uppercase tracking-widest">Enrolled in</span>
+                                <span class="text-xs font-bold text-royal-950 uppercase tracking-widest">150+ Miami Elite Residences</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Editorial Copy Column -->
+                <div class="lg:col-span-7 space-y-8">
+                    <div>
+                        <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-royal-600 block mb-3">Customized Aquatic Development</span>
+                        <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-royal-950 leading-tight">
+                            Private Swim Instruction,<br>Brought to Your Pool Sanctuary
+                        </h2>
+                    </div>
+
+                    <p class="text-base text-slate-600 leading-relaxed">
+                        AquaCats delivers personalized, private swim curriculums to the privacy and absolute safety of your South Florida estate pool. We believe that learning is a lifestyle, ensuring safety rules, refined stroke habits, and personal water independence are formed without distraction.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                        <div class="flex gap-4">
+                            <div class="w-11 h-11 rounded-full bg-royal-100 flex items-center justify-center text-royal-800 shrink-0 shadow-sm">
+                                <i class="fa-solid fa-umbrella-beach text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-royal-950 uppercase text-xs tracking-widest">Ultimate Privacy</h4>
+                                <p class="text-xs text-slate-500 mt-1.5 leading-relaxed">Instruction in your private pool ensures a calm, highly comfortable, and focused learning zone.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="w-11 h-11 rounded-full bg-royal-100 flex items-center justify-center text-royal-800 shrink-0 shadow-sm">
+                                <i class="fa-solid fa-graduation-cap text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-royal-950 uppercase text-xs tracking-widest">Certified Instructors</h4>
+                                <p class="text-xs text-slate-500 mt-1.5 leading-relaxed">Highly trained, vetted, and background-checked elite water safety educators.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="w-11 h-11 rounded-full bg-royal-100 flex items-center justify-center text-royal-800 shrink-0 shadow-sm">
+                                <i class="fa-solid fa-calendar text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-royal-950 uppercase text-xs tracking-widest">Tailored Booking</h4>
+                                <p class="text-xs text-slate-500 mt-1.5 leading-relaxed">Flexible elite schedules allow your swimmer to progress seamlessly year-round.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="w-11 h-11 rounded-full bg-royal-100 flex items-center justify-center text-royal-800 shrink-0 shadow-sm">
+                                <i class="fa-solid fa-shield-halved text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-royal-950 uppercase text-xs tracking-widest">Safety Instincts First</h4>
+                                <p class="text-xs text-slate-500 mt-1.5 leading-relaxed">Our curriculums integrate life-saving self-rescue reflexes and water safety logic instantly.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="#service-areas" class="inline-flex items-center gap-3 bg-royal-950 hover:bg-royal-900 text-white px-8 py-4 rounded-full transition-all duration-300 text-xs tracking-widest uppercase font-bold shadow-xl">
+                            <span>Browse Miami Service Zones</span>
+                            <i class="fa-solid fa-location-arrow text-sky-400"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- STAGES / CURRICULUMS SECTION -->
+    <section id="lessons" class="py-24 bg-sand-warm relative overflow-hidden">
+        
+        <!-- Elegant Flowing Top Wave Line -->
+        <div class="absolute top-0 left-0 w-full overflow-hidden leading-none rotate-180">
+            <svg class="relative block w-full h-[40px]" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,42.4V0Z" fill="#ffffff"></path>
+            </svg>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-royal-600 block mb-3">Structured Development</span>
+                <h2 class="text-4xl md:text-5xl font-bold text-royal-950">
+                    A Portfolio Built for Every Stage
+                </h2>
+                <p class="text-slate-500 mt-4 text-xs md:text-sm tracking-wide uppercase">
+                    Personalized private sessions designed to build consistent progress.
+                </p>
+            </div>
+
+            <!-- Program Luxury Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Stage 1 Luxury Card -->
+                <div class="bg-white rounded-3xl border border-sand-dark/40 p-8 flex flex-col justify-between hover:shadow-2xl transition-all duration-300 group">
+                    <div>
+                        <div class="w-14 h-14 rounded-full bg-royal-50 flex items-center justify-center text-royal-800 mb-8 border border-royal-100">
+                            <i class="fa-solid fa-baby text-xl"></i>
+                        </div>
+                        <span class="text-[9px] uppercase tracking-widest font-extrabold text-royal-500">Stage 01</span>
+                        <h3 class="text-2xl font-bold text-royal-950 mt-1 mb-4">Splash & Safety</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed mb-8">
+                            For infants & toddlers. Emphasizes basic comfort, breath synchronization, independent back float safety, and early life-preservative instincts.
+                        </p>
+                        <ul class="space-y-3 text-xs text-slate-600 border-t border-slate-100 pt-6">
+                            <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-sky-500 text-xs"></i> Gentle Water Comfort</li>
+                            <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-sky-500 text-xs"></i> Controlled Breath Submersion</li>
+                            <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-sky-500 text-xs"></i> Survival Back Float Stability</li>
+                        </ul>
+                    </div>
+                    <div class="mt-10 pt-6">
+                        <button onclick="openRegisterModal()" class="w-full bg-slate-50 hover:bg-royal-950 hover:text-white text-royal-950 border border-slate-200 text-xs font-bold uppercase tracking-widest py-4 rounded-full transition-all duration-300">
+                            Select Stage 1
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Stage 2 Luxury Card -->
+                <div class="bg-royal-950 rounded-3xl p-8 flex flex-col justify-between hover:shadow-2xl transition-all duration-300 group relative text-white">
+                    <div class="absolute -top-3.5 right-8 bg-sky-500 text-white px-4 py-1 rounded-full text-[9px] font-bold uppercase tracking-widest">
+                        Most Demanded
+                    </div>
+                    <div>
+                        <div class="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center text-sky-300 mb-8 border border-white/10">
+                            <i class="fa-solid fa-fish-fins text-xl"></i>
+                        </div>
+                        <span class="text-[9px] uppercase tracking-widest font-extrabold text-sky-300">Stage 02</span>
+                        <h3 class="text-2xl font-bold text-white mt-1 mb-4">Confidence & Flow</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-8">
+                            Independent swim development. Guides coordinated flutter kicks, freestyle mechanics, long-distance stamina, and independent target pool exits.
+                        </p>
+                        <ul class="space-y-3 text-xs text-slate-300 border-t border-white/10 pt-6">
+                            <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-sky-300 text-xs"></i> Refined Freestyle Mechanics</li>
+                            <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-sky-300 text-xs"></i> Consistent Swim Kick Flow</li>
+                            <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-sky-300 text-xs"></i> Safety Roll-to-Float Control</li>
+                        </ul>
+                    </div>
+                    <div class="mt-10 pt-6">
+                        <button onclick="openRegisterModal()" class="w-full bg-sky-500 hover:bg-sky-400 text-white text-xs font-bold uppercase tracking-widest py-4 rounded-full transition-all duration-300">
+                            Select Stage 2
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Stage 3 Luxury Card -->
+                <div class="bg-white rounded-3xl border border-sand-dark/40 p-8 flex flex-col justify-between hover:shadow-2xl transition-all duration-300 group">
+                    <div>
+                        <div class="w-14 h-14 rounded-full bg-royal-50 flex items-center justify-center text-royal-800 mb-8 border border-royal-100">
+                            <i class="fa-solid fa-water text-xl"></i>
+                        </div>
+                        <span class="text-[9px] uppercase tracking-widest font-extrabold text-royal-500">Stage 03</span>
+                        <h3 class="text-2xl font-bold text-royal-950 mt-1 mb-4">Stroke Mastery</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed mb-8">
+                            Advanced stroke composition. Refines high-stamina backstroke, breaststroke, butterfly, speed endurance, and elegant flip-turn pool mechanics.
+                        </p>
+                        <ul class="space-y-3 text-xs text-slate-600 border-t border-slate-100 pt-6">
+                            <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-sky-500 text-xs"></i> All Four Competitive Strokes</li>
+                            <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-sky-500 text-xs"></i> Complex Breath Timing Systems</li>
+                            <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-sky-500 text-xs"></i> Advanced Endurance Work</li>
+                        </ul>
+                    </div>
+                    <div class="mt-10 pt-6">
+                        <button onclick="openRegisterModal()" class="w-full bg-slate-50 hover:bg-royal-950 hover:text-white text-royal-950 border border-slate-200 text-xs font-bold uppercase tracking-widest py-4 rounded-full transition-all duration-300">
+                            Select Stage 3
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- METHODOLOGY / OUR APPROACH SECTION -->
+    <section id="approach" class="py-24 bg-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-royal-600 block mb-3">Our Core Philosophy</span>
+                <h2 class="text-4xl font-bold text-royal-950">Start Anytime. Build Real Progress.</h2>
+                <p class="text-slate-600 mt-4 text-sm leading-relaxed">
+                    AquaCats offers personalized, in-home swim lessons designed for consistent, ongoing progress. Join at any time and choose a schedule that works best for your swimmer's learning curve.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="p-8 bg-sand-warm rounded-3xl border border-sand-dark/20 space-y-4">
+                    <span class="text-3xl font-bold text-royal-600">01</span>
+                    <h3 class="text-xl font-bold text-royal-950">Warm Water Familiarity</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">Learning in a familiar domestic pool ensures high-level focus and safety association. Swimmers link comfort with learning immediately.</p>
+                </div>
+                <div class="p-8 bg-sand-warm rounded-3xl border border-sand-dark/20 space-y-4">
+                    <span class="text-3xl font-bold text-royal-600">02</span>
+                    <h3 class="text-xl font-bold text-royal-950">Vetted Safety Guides</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">Every professional private instructor undergoes meticulous screening, ensuring elite water safety certifications are fully updated.</p>
+                </div>
+                <div class="p-8 bg-sand-warm rounded-3xl border border-sand-dark/20 space-y-4">
+                    <span class="text-3xl font-bold text-royal-600">03</span>
+                    <h3 class="text-xl font-bold text-royal-950">Consistent Milestone Tracking</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">We record safety and swim biomechanic progress after every single private session, visible in your secure client portal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROFESSIONAL LIFEGUARD SERVICE -->
+    <section id="lifeguard" class="py-24 bg-royal-950 text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(16,131,228,0.15),transparent)] pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                
+                <div class="lg:col-span-7 space-y-8">
+                    <div>
+                        <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-sky-400 block mb-3">Premium Poolside Defense</span>
+                        <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight">
+                            Professional At-Home <br><span class="text-sky-300">Lifeguard Services</span>
+                        </h2>
+                    </div>
+
+                    <p class="text-slate-300 leading-relaxed text-sm md:text-base">
+                        Ensure total peace of mind for your backyard social pool events, birthday gatherings, or estate pool parties. AquaCats provides fully certified, fully equipped, and active lifeguards to watch over your family's swimming activities with absolute, professional focus.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-shield-heart text-sky-400 text-lg mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-white text-xs uppercase tracking-widest">Active Surveillance</h4>
+                                <p class="text-xs text-slate-400 mt-1">Dedicated surveillance that stays active without distractions.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-kit-medical text-sky-400 text-lg mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-white text-xs uppercase tracking-widest">First-Aid Certified</h4>
+                                <p class="text-xs text-slate-400 mt-1">Certified in CPR, AED execution, and professional water rescue methods.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 flex flex-wrap gap-4">
+                        <button onclick="openRegisterModal()" class="bg-sky-500 hover:bg-sky-400 text-white font-bold text-xs tracking-widest uppercase px-8 py-4 rounded-full transition-all shadow-lg">
+                            Request Event Guard
+                        </button>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5">
+                    <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-8 space-y-6">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-sky-500/10 flex items-center justify-center text-sky-400">
+                                <i class="fa-solid fa-circle-check"></i>
+                            </div>
+                            <span class="font-bold text-sm tracking-wide uppercase text-white">Event Booking Fast Track</span>
+                        </div>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            To ensure optimal guard safety metrics, please schedule lifeguard coverage requests at least 72 hours prior to your estate's planned aquatic event.
+                        </p>
+                        <div class="border-t border-white/10 pt-4 text-xs font-bold text-sky-300 uppercase tracking-widest">
+                            ⚡ Available Daily Across Miami Metro
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- VERTICAL LIFE-STYLE VIDEO SHOWCASE SECTION -->
+    <section class="py-24 bg-sand-warm relative overflow-hidden border-b border-sand-soft">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(16,131,228,0.05),transparent)] pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                
+                <!-- Left Column: Upscale Mockup for Vertical Video -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-[320px] aspect-[9/16] rounded-[2.5rem] bg-royal-950 p-3 shadow-2xl border-4 border-royal-900 group hover:scale-[1.02] transition-transform duration-500">
+                        <!-- Camera Notch Mockup -->
+                        <div class="absolute top-5 left-1/2 -translate-x-1/2 w-24 h-4 bg-royal-950 rounded-full z-20 flex items-center justify-around px-4">
+                            <span class="w-1.5 h-1.5 bg-sky-500/80 rounded-full"></span>
+                            <span class="w-6 h-1 bg-royal-900 rounded-full"></span>
+                        </div>
+                        
+                        <!-- Video Shell -->
+                        <div class="w-full h-full rounded-[2rem] overflow-hidden relative bg-royal-950">
+                            <video class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-300" 
+                                   autoplay muted loop playsinline>
+                                <source src="http://folktalesanpedro.org/wp-content/uploads/2026/06/openart-35813842ecfb037e8a2edb09bcae64fd-024219d5-3816-45e2-bab4-c84004e32cb9_1779234535231_c9d75ddd-1.mp4" type="video/mp4">
+                            </video>
+                            <div class="absolute inset-0 bg-gradient-to-t from-royal-950/45 to-transparent pointer-events-none"></div>
+                        </div>
+
+                        <!-- Sparkle Accents -->
+                        <div class="absolute -bottom-4 -left-4 w-12 h-12 bg-sky-200/40 rounded-full filter blur-xl animate-pulse"></div>
+                        <div class="absolute -top-4 -right-4 w-16 h-16 bg-royal-100/30 rounded-full filter blur-xl animate-pulse" style="animation-delay: 2s;"></div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Upscale Copy & Call to Action -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div>
+                        <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-royal-600 block mb-3">Live the Experience</span>
+                        <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-royal-950 leading-tight">
+                            The Private <br>Lesson Vibe
+                        </h2>
+                    </div>
+                    
+                    <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                        Witness the combination of personalized safety mechanics and genuine joy. We cultivate a custom aquatic environment where your child learns and develops security instincts at their own rhythm, with dedicated attention.
+                    </p>
+
+                    <div class="space-y-4 pt-4 border-t border-sand-dark/30">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-royal-50 flex items-center justify-center text-royal-700 shrink-0 shadow-sm border border-royal-100">
+                                <i class="fa-solid fa-water-ladder text-xs"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-royal-950 uppercase text-xs tracking-widest">Tailored Progress Velocity</h4>
+                                <p class="text-xs text-slate-500 mt-1">No rushed timelines. Every milestone is checked off with real safety verification.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-royal-50 flex items-center justify-center text-royal-700 shrink-0 shadow-sm border border-royal-100">
+                                <i class="fa-solid fa-heart text-xs"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-royal-950 uppercase text-xs tracking-widest">Confidence First, Strokes Second</h4>
+                                <p class="text-xs text-slate-500 mt-1">We build water-love and security parameters before mastering high-end competitive strokes.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-6">
+                        <button onclick="openRegisterModal()" class="bg-royal-950 hover:bg-royal-900 text-white font-bold text-xs tracking-widest uppercase px-10 py-5 rounded-full transition-all shadow-xl">
+                            Join the Aqua Cats Family
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE SERVICE REGION - GREATER MIAMI FOCUS -->
+    <section id="service-areas" class="py-24 bg-white relative overflow-hidden">
+        
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                
+                <!-- Left Details & ZIP Verification -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-royal-600 block mb-3">Service Availability</span>
+                        <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-royal-950">
+                            Miami's Premier Coastal Estates
+                        </h2>
+                    </div>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Our premium mobile swim instructors operate with discretion in Greater Miami's most exclusive neighborhoods. Enter your Florida zip code to check instantaneous private pool service availability.
+                    </p>
+
+                    <!-- Interactive Live ZIP Checker -->
+                    <div class="bg-sand-warm p-8 rounded-3xl border border-sand-dark/40 shadow-xl">
+                        <h4 class="font-bold text-royal-950 uppercase text-xs tracking-widest mb-4">
+                            Instant Miami Zip Code Verification:
+                        </h4>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <input type="text" id="zipInput" placeholder="Florida Zip Code (e.g. 33139, 33149)" 
+                                   class="bg-white border border-sand-dark/50 text-slate-800 placeholder-slate-400 text-xs tracking-widest rounded-full px-6 py-4 w-full focus:outline-none focus:ring-1 focus:ring-royal-500 font-bold uppercase">
+                            <button onclick="checkZipCode()" class="bg-royal-950 hover:bg-royal-900 text-white font-bold text-xs tracking-widest uppercase px-8 py-4 rounded-full transition-all whitespace-nowrap shadow-md">
+                                Verify Zip
+                            </button>
+                        </div>
+                        <!-- Response Area -->
+                        <div id="zipResult" class="mt-4 text-xs font-bold hidden transition-all duration-300"></div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h5 class="font-bold text-royal-950 text-xs uppercase tracking-widest">Active Miami Districts:</h5>
+                        <div class="flex flex-wrap gap-2.5">
+                            <span class="bg-royal-50 px-4 py-2 rounded-full text-xs font-bold border border-royal-100 text-royal-950 shadow-sm"><i class="fa-solid fa-location-dot text-sky-500 mr-2"></i>Key Biscayne</span>
+                            <span class="bg-royal-50 px-4 py-2 rounded-full text-xs font-bold border border-royal-100 text-royal-950 shadow-sm"><i class="fa-solid fa-location-dot text-sky-500 mr-2"></i>Pinecrest</span>
+                            <span class="bg-royal-50 px-4 py-2 rounded-full text-xs font-bold border border-royal-100 text-royal-950 shadow-sm"><i class="fa-solid fa-location-dot text-sky-500 mr-2"></i>Brickell & Grove</span>
+                            <span class="bg-royal-50 px-4 py-2 rounded-full text-xs font-bold border border-royal-100 text-royal-950 shadow-sm"><i class="fa-solid fa-location-dot text-sky-500 mr-2"></i>Star Island</span>
+                            <span class="bg-royal-50 px-4 py-2 rounded-full text-xs font-bold border border-royal-100 text-royal-950 shadow-sm"><i class="fa-solid fa-location-dot text-sky-500 mr-2"></i>Coral Gables</span>
+                            <span class="bg-royal-50 px-4 py-2 rounded-full text-xs font-bold border border-royal-100 text-royal-950 shadow-sm"><i class="fa-solid fa-location-dot text-sky-500 mr-2"></i>Sunny Isles</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Styled Miami SVG Map Graphics -->
+                <div class="lg:col-span-7 relative">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-sky-300/10 to-royal-400/10 rounded-3xl filter blur-2xl"></div>
+                    
+                    <div class="relative bg-sand-warm rounded-3xl border border-sand-dark/40 shadow-2xl overflow-hidden p-6 text-center">
+                        <div class="flex items-center justify-between mb-4 border-b border-sand-dark/20 pb-4">
+                            <span class="text-[10px] font-bold text-royal-700 uppercase tracking-widest">Greater Miami Coastal Estate Map</span>
+                            <span class="bg-royal-950 text-white text-[9px] font-bold tracking-widest px-3 py-1 rounded-full uppercase">Priority Service Bounds</span>
+                        </div>
+
+                        <!-- Stylized Miami Coast Map Coordinates Representation -->
+                        <div class="relative w-full aspect-square bg-[#eaf4ff] border border-royal-100 rounded-2xl flex items-center justify-center p-4">
+                            <svg class="w-full h-full max-h-[420px]" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Biscayne Bay & Coast Outline background -->
+                                <path d="M120 400 L120 300 C150 240, 180 180, 200 120 C220 70, 250 40, 280 0 L400 0 L400 400 Z" fill="#bce1ff" opacity="0.6" />
+                                
+                                <!-- Greater Miami Barrier Islands -->
+                                <path d="M260 20 C270 40, 285 70, 280 120 C275 160, 290 190, 310 210" stroke="#0ea5e9" stroke-width="6" stroke-linecap="round" class="opacity-40" />
+
+                                <!-- Key Biscayne island block -->
+                                <path d="M315 280 C325 290, 320 330, 305 350 C295 360, 285 340, 295 310 Z" fill="#0284c7" class="opacity-30" />
+
+                                <!-- Main service zone shadow boundary circle -->
+                                <circle cx="210" cy="210" r="130" fill="#0284c7" fill-opacity="0.05" stroke="#1083e4" stroke-width="2" stroke-dasharray="10 6" />
+                                <text x="210" y="210" text-anchor="middle" fill="#09447e" font-size="10" font-weight="bold" letter-spacing="1.5">MIAMI CORE RADIUS</text>
+
+                                <!-- Star Island Marker -->
+                                <g class="cursor-pointer group" onclick="highlightArea('Sunny Isles / Star Island')">
+                                    <circle cx="280" cy="90" r="8" fill="#0565bd" class="animate-ping" />
+                                    <circle cx="280" cy="90" r="5" fill="#0565bd" />
+                                    <text x="292" y="94" fill="#030712" font-weight="bold" font-size="10">Sunny Isles & Islands</text>
+                                </g>
+
+                                <!-- Miami Beach Marker -->
+                                <g class="cursor-pointer group" onclick="highlightArea('Miami Beach')">
+                                    <circle cx="295" cy="170" r="8" fill="#1083e4" class="animate-ping" style="animation-delay: 0.5s;" />
+                                    <circle cx="295" cy="170" r="5" fill="#1083e4" />
+                                    <text x="307" y="174" fill="#030712" font-weight="bold" font-size="10">Miami Beach</text>
+                                </g>
+
+                                <!-- Brickell / Downtown Marker -->
+                                <g class="cursor-pointer group" onclick="highlightArea('Brickell & Downtown')">
+                                    <circle cx="220" cy="200" r="8" fill="#0565bd" class="animate-ping" style="animation-delay: 1s;" />
+                                    <circle cx="220" cy="200" r="5" fill="#0565bd" />
+                                    <text x="145" y="204" fill="#030712" font-weight="bold" font-size="10">Brickell</text>
+                                </g>
+
+                                <!-- Coral Gables Marker -->
+                                <g class="cursor-pointer group" onclick="highlightArea('Coral Gables')">
+                                    <circle cx="160" cy="250" r="5" fill="#1083e4" />
+                                    <text x="80" y="254" fill="#030712" font-weight="bold" font-size="10">Coral Gables</text>
+                                </g>
+
+                                <!-- Key Biscayne Marker -->
+                                <g class="cursor-pointer group" onclick="highlightArea('Key Biscayne')">
+                                    <circle cx="305" cy="310" r="8" fill="#0565bd" class="animate-ping" style="animation-delay: 1.5s;" />
+                                    <circle cx="305" cy="310" r="5" fill="#0565bd" />
+                                    <text x="317" y="314" fill="#030712" font-weight="bold" font-size="10">Key Biscayne</text>
+                                </g>
+
+                                <!-- Pinecrest Marker -->
+                                <g class="cursor-pointer group" onclick="highlightArea('Pinecrest')">
+                                    <circle cx="130" cy="330" r="5" fill="#1083e4" />
+                                    <text x="65" y="334" fill="#030712" font-weight="bold" font-size="10">Pinecrest</text>
+                                </g>
+                            </svg>
+
+                            <div class="absolute bottom-4 left-4 bg-white/95 px-4 py-2.5 rounded-xl border border-royal-100 shadow-md text-left text-[10px] max-w-[210px]">
+                                <span class="font-bold text-royal-950 block mb-0.5">💡 Discretionary Service:</span>
+                                <span class="text-slate-500 leading-normal">Tap map pins to verify active private instructor rotations.</span>
+                            </div>
+                        </div>
+
+                        <!-- Active selection output feedback -->
+                        <div class="mt-4 p-4 bg-sand-soft rounded-2xl text-[11px] text-slate-600 font-bold tracking-wider uppercase" id="mapFeedbackBox">
+                            Please select a neighborhood pin to display service status.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECURE CLIENT PORTAL REDIRECT ZONE -->
+    <section id="portal" class="py-20 bg-royal-50 border-t border-b border-royal-100">
+        <div class="max-w-4xl mx-auto px-6 text-center space-y-6">
+            <span class="bg-sky-100 text-sky-800 text-[10px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">Secure Family Access</span>
+            <h2 class="text-3xl font-bold text-royal-950">Go To My Client Portal</h2>
+            <p class="text-sm text-slate-600 max-w-lg mx-auto">
+                Already registered with AquaCats? Access your custom training plans, view upcoming safety schedule milestones, and communicate with your private instructor.
+            </p>
+            <div>
+                <a href="#" onclick="openRegisterModal(); return false;" class="inline-flex items-center gap-2 bg-royal-950 hover:bg-royal-900 text-white font-bold text-xs uppercase tracking-widest px-8 py-4 rounded-full transition-all">
+                    <span>Secure Client Login</span>
+                    <i class="fa-solid fa-lock"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECURE LUXURY INQUIRY DESK -->
+    <section id="contact" class="py-24 bg-sand-warm relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+                
+                <!-- Information Desk Left Panel -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-royal-600 block mb-3">Estates Coordination Desk</span>
+                        <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-royal-950 leading-tight">
+                            Welcome to the Family
+                        </h2>
+                    </div>
+
+                    <p class="text-slate-600 leading-relaxed text-sm">
+                        At AquaCats, we are committed to providing premium, highly private experiences that integrate effortlessly into your family's routine. Connect directly with our Greater Miami placement managers.
+                    </p>
+
+                    <!-- Contact details -->
+                    <div class="bg-white rounded-3xl p-8 border border-sand-dark/40 space-y-6 shadow-sm">
+                        <h4 class="font-bold text-royal-950 text-xl">AquaCats Mobile Aquatics</h4>
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-4 text-slate-600">
+                                <div class="w-10 h-10 rounded-full bg-royal-50 flex items-center justify-center text-royal-800 shrink-0">
+                                    <i class="fa-solid fa-map-location-dot"></i>
+                                </div>
+                                <span class="text-xs font-bold uppercase tracking-widest">Miami, Florida, United States</span>
+                            </div>
+
+                            <div class="flex items-center gap-4 text-slate-600">
+                                <div class="w-10 h-10 rounded-full bg-royal-50 flex items-center justify-center text-royal-800 shrink-0">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <a href="tel:7865186500" class="text-xs font-bold uppercase tracking-widest hover:text-royal-600 transition-colors">Call or Text: 786 518 6500</a>
+                            </div>
+
+                            <div class="flex items-center gap-4 text-slate-600">
+                                <div class="w-10 h-10 rounded-full bg-royal-50 flex items-center justify-center text-royal-800 shrink-0">
+                                    <i class="fa-solid fa-clock"></i>
+                                </div>
+                                <div>
+                                    <span class="block text-[9px] font-bold text-slate-400 uppercase tracking-widest">Availability</span>
+                                    <span class="text-xs font-bold uppercase tracking-widest text-royal-950">Daily: By Appointment Only</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6 bg-royal-50 rounded-2xl border border-royal-100 text-xs text-royal-900 font-bold flex gap-3 leading-relaxed">
+                        <i class="fa-solid fa-circle-info text-base mt-0.5 text-royal-600"></i>
+                        <p>Registration matches you directly with our dedicated placements desk to complete a custom domestic safety analysis of your estate pool before scheduling lessons.</p>
+                    </div>
+                </div>
+
+                <!-- Sleek Contact Form Right -->
+                <div class="lg:col-span-7">
+                    <div class="bg-white rounded-3xl border border-sand-dark/40 p-8 md:p-12 shadow-2xl relative">
+                        <div class="absolute -top-3 -right-3 w-24 h-24 bg-sky-200/20 rounded-full filter blur-xl"></div>
+                        
+                        <h4 class="text-2xl font-bold text-royal-950 mb-2">Connect with Placements</h4>
+                        <p class="text-xs text-slate-500 mb-8 uppercase tracking-widest">A placement manager will respond to your request within two hours.</p>
+
+                        <!-- Live Form Simulated Feedback -->
+                        <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                            
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <!-- Name Input -->
+                                <div class="relative">
+                                    <label class="block text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1.5">Family Representative Name</label>
+                                    <input type="text" required name="userName" placeholder="John Doe" 
+                                           class="bg-sand-warm border border-sand-dark/50 rounded-xl w-full px-5 py-4 text-xs focus:outline-none focus:ring-1 focus:ring-royal-500 font-medium">
+                                </div>
+
+                                <!-- Email Input -->
+                                <div class="relative">
+                                    <label class="block text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1.5">Secure Email Address*</label>
+                                    <input type="email" required name="userEmail" placeholder="john@domain.com" 
+                                           class="bg-sand-warm border border-sand-dark/50 rounded-xl w-full px-5 py-4 text-xs focus:outline-none focus:ring-1 focus:ring-royal-500 font-medium">
+                                </div>
+                            </div>
+
+                            <!-- Phone/Text Input -->
+                            <div class="relative">
+                                <label class="block text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1.5">Primary Phone / Text Number*</label>
+                                <input type="tel" required name="userPhone" placeholder="(786) 518-6500" 
+                                       class="bg-sand-warm border border-sand-dark/50 rounded-xl w-full px-5 py-4 text-xs focus:outline-none focus:ring-1 focus:ring-royal-500 font-medium">
+                                </div>
+
+                            <!-- Message Box -->
+                            <div class="relative">
+                                <label class="block text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1.5">Lesson Objectives & Swimmer Details (Ages, Experience)*</label>
+                                <textarea required name="userMessage" rows="4" placeholder="Briefly describe ages, experience, and custom safety requirements..." 
+                                          class="bg-sand-warm border border-sand-dark/50 rounded-xl w-full px-5 py-4 text-xs focus:outline-none focus:ring-1 focus:ring-royal-500 font-medium"></textarea>
+                            </div>
+
+                            <p class="text-[9px] text-slate-400 leading-normal tracking-wide">
+                                This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy" target="_blank" class="underline hover:text-royal-500">Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank" class="underline hover:text-royal-500">Terms of Service</a> apply.
+                            </p>
+
+                            <!-- Custom Alert Bar (hidden by default) -->
+                            <div id="formStatus" class="hidden p-4 rounded-xl font-bold text-xs text-center uppercase tracking-widest"></div>
+
+                            <button type="submit" class="w-full bg-royal-950 hover:bg-royal-900 text-white py-5 rounded-full text-xs font-bold tracking-widest uppercase shadow-xl transition-all duration-300 flex items-center justify-center gap-3">
+                                <span>Send Placements Request</span>
+                                <i class="fa-solid fa-paper-plane text-sky-400"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PREMIUM MODAL OVERLAY FOR REGISTERING -->
+    <div id="registerModal" class="fixed inset-0 z-50 overflow-y-auto hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <!-- Modal Background overlay -->
+            <div onclick="closeRegisterModal()" class="fixed inset-0 bg-royal-950/70 backdrop-blur-sm transition-opacity" aria-hidden="true"></div>
+
+            <!-- Position center window spacer -->
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+
+            <!-- Modal Content Box -->
+            <div class="inline-block align-bottom bg-white rounded-3xl text-left overflow-hidden shadow-2xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full border border-sand-dark/40">
+                <div class="bg-royal-950 px-8 py-8 text-white relative border-b border-white/5">
+                    <button onclick="closeRegisterModal()" class="absolute top-6 right-6 text-white/60 hover:text-white text-lg">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                    <h3 class="text-3xl font-bold" id="modal-title">Estate Registration</h3>
+                    <p class="text-xs text-sky-200 uppercase tracking-widest mt-1">Initiate Private Placement Matchmaking</p>
+                </div>
+
+                <div class="px-8 py-8 bg-sand-warm space-y-6">
+                    <form id="modalForm" onsubmit="handleModalSubmit(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">Parent's Full Name</label>
+                            <input type="text" required name="parentName" class="w-full bg-white border border-sand-dark/50 rounded-xl px-4 py-3 text-xs focus:ring-1 focus:ring-royal-500">
+                        </div>
+
+                        <div>
+                            <label class="block text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">Secure Email Address*</label>
+                            <input type="email" required name="parentEmail" class="w-full bg-white border border-sand-dark/50 rounded-xl px-4 py-3 text-xs focus:ring-1 focus:ring-royal-500">
+                        </div>
+
+                        <div>
+                            <label class="block text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">Representative Phone Number*</label>
+                            <input type="tel" required name="parentPhone" placeholder="786-518-6500" class="w-full bg-white border border-sand-dark/50 rounded-xl px-4 py-3 text-xs focus:ring-1 focus:ring-royal-500">
+                        </div>
+
+                        <div>
+                            <label class="block text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">Target Development Stage</label>
+                            <select name="selectedStage" class="w-full bg-white border border-sand-dark/50 rounded-xl px-4 py-3 text-xs focus:ring-1 focus:ring-royal-500 text-royal-950 font-bold uppercase tracking-wider">
+                                <option value="stage1">Stage 1: Splash & Safety (Infant)</option>
+                                <option value="stage2" selected>Stage 2: Confidence & Flow (Kids Core)</option>
+                                <option value="stage3">Stage 3: Stroke Mastery (Advanced Strokes)</option>
+                                <option value="lifeguard">Active Lifeguard Event Request Only</option>
+                            </select>
+                        </div>
+
+                        <div id="modalStatus" class="hidden p-3 rounded-xl text-center text-xs font-bold uppercase tracking-wider"></div>
+
+                        <button type="submit" class="w-full bg-royal-950 hover:bg-royal-900 text-white py-4 rounded-xl font-bold text-xs tracking-widest uppercase shadow-md transition-all">
+                            Complete Safe Placement Application
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-royal-950 text-slate-400 py-16 px-6 relative overflow-hidden border-t border-white/5">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-white/10 pb-12">
+            <div class="space-y-4">
+                <span class="text-xl font-black tracking-tight text-white block">Aqua Cats</span>
+                <p class="text-xs text-slate-400">
+                    Florida's premium boutique home aquatics and lifesaver system.
+                </p>
+                <p class="text-xs font-bold text-sky-400">786 518 6500</p>
+            </div>
+            <div>
+                <span class="block text-xs uppercase tracking-widest font-bold text-white mb-4">Navigations</span>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="#" class="hover:text-white transition-all">Home</a></li>
+                    <li><a href="#mission" class="hover:text-white transition-all">Mission</a></li>
+                    <li><a href="#lessons" class="hover:text-white transition-all">Lessons</a></li>
+                    <li><a href="#approach" class="hover:text-white transition-all">Our Approach</a></li>
+                </ul>
+            </div>
+            <div>
+                <span class="block text-xs uppercase tracking-widest font-bold text-white mb-4">Portals</span>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="#portal" class="hover:text-white transition-all">Go To My Client Portal</a></li>
+                    <li><a href="#" onclick="openRegisterModal(); return false;" class="hover:text-white transition-all">Register to Swim</a></li>
+                    <li><a href="#lifeguard" class="hover:text-white transition-all">Book a Lifeguard</a></li>
+                </ul>
+            </div>
+            <div>
+                <span class="block text-xs uppercase tracking-widest font-bold text-white mb-4">Legal desk</span>
+                <p class="text-xs text-slate-400 mb-2">Privacy Policy & Terms and Conditions apply to all pool scheduling matches.</p>
+                <div class="flex gap-2">
+                    <span class="bg-white/10 text-white font-bold text-[9px] px-3 py-1 rounded">SSL SECURE</span>
+                    <span class="bg-white/10 text-white font-bold text-[9px] px-3 py-1 rounded">HIPAA READY</span>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto pt-8 flex flex-col md:flex-row items-center justify-between text-[10px] text-slate-500 gap-4">
+            <span>Copyright © 2026 AquaCats Mobile Swim School - All Rights Reserved.</span>
+            <span>Made with precision for South Florida coastal estates.</span>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC AND ANIMATIONS -->
+    <script>
+        // 1. HEADER SCROLL INTERACTIVE TINT
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // 2. MOBILE MENU DRAWER CONTROLS
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            if (menu.classList.contains('translate-x-full')) {
+                menu.classList.remove('translate-x-full');
+            } else {
+                menu.classList.add('translate-x-full');
+            }
+        }
+
+        // 3. SCROLL SWIMMING CAT ANIMATION LOGIC (Moves rightward all the way as page scrolls past)
+        window.addEventListener('scroll', () => {
+            const lane = document.getElementById('swim-animation-lane');
+            const cat = document.getElementById('swimmingCat');
+            
+            if (!lane || !cat) return;
+
+            const rect = lane.getBoundingClientRect();
+            const viewHeight = window.innerHeight;
+
+            // Compute scroll position relative to the lane component
+            // 0 is when the top of the lane enters the bottom of the viewport
+            // 1 is when the bottom of the lane leaves the top of the viewport
+            let progress = (viewHeight - rect.top) / (viewHeight + rect.height);
+            
+            progress = Math.max(0, Math.min(1, progress));
+            
+            // Map the progress to move cleanly from 0% left margin all the way rightward (up to 83% width)
+            const translatePercent = progress * 83;
+
+            cat.style.left = `${translatePercent}%`;
+        });
+
+        // 4. MIAMI TARGET ZIP CHECKER
+        function checkZipCode() {
+            const input = document.getElementById('zipInput').value.trim();
+            const resultBox = document.getElementById('zipResult');
+            
+            if (!input) {
+                showZipFeedback("Please enter a valid zip code.", "bg-red-50 text-red-700");
+                return;
+            }
+
+            // Primary Miami high-end estate zip codes
+            const targetZips = ["33139", "33101", "33149", "33156", "33143", "33129", "33133", "33140", "33154", "33180", "33160"];
+            const isServiceable = targetZips.includes(input) || (input.startsWith("331") || input.startsWith("332"));
+
+            if (isServiceable) {
+                showZipFeedback(`🎉 Success! Zip code ${input} is within our active Miami priority service boundaries.`, "bg-emerald-50 text-emerald-800 border border-emerald-200 uppercase tracking-wider");
+            } else {
+                showZipFeedback(`📍 Notice: Zip code ${input} is currently adjacent to our primary coverage. Contact our placements coordinator desk.`, "bg-amber-50 text-amber-800 border border-amber-200 uppercase tracking-wider");
+            }
+        }
+
+        function showZipFeedback(message, classes) {
+            const resultBox = document.getElementById('zipResult');
+            resultBox.className = "mt-4 p-4 rounded-xl text-[10px] font-bold tracking-wider leading-relaxed transition-all duration-300 " + classes;
+            resultBox.innerText = message;
+            resultBox.classList.remove('hidden');
+        }
+
+        // Highlight neighborhood feedback from interactive SVG map landmarks
+        function highlightArea(cityName) {
+            const feedbackBox = document.getElementById('mapFeedbackBox');
+            feedbackBox.className = "mt-4 p-4 rounded-xl text-[11px] font-bold tracking-widest text-royal-950 bg-royal-100/90 border border-royal-200 transition-all duration-300 scale-[1.02] uppercase";
+            feedbackBox.innerText = `🐳 Selected District: ${cityName} is fully operational. Placement matching timeframe is estimated at 3-5 standard business days.`;
+            
+            setTimeout(() => {
+                feedbackBox.classList.remove('scale-[1.02]');
+            }, 300);
+        }
+
+        // 5. PLACEMENTS DESK FORM SIMULATOR
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const statusBox = document.getElementById('formStatus');
+            const form = document.getElementById('contactForm');
+            
+            statusBox.className = "p-4 rounded-xl font-bold text-[10px] tracking-widest text-center bg-royal-950 text-white border border-royal-700";
+            statusBox.innerHTML = "✨ REQUEST SUBMITTED. AN INSTRUCTOR MATCHING EXECUTIVE WILL CONTACT YOU WITHIN 2 HOURS.";
+            statusBox.classList.remove('hidden');
+
+            form.reset();
+            setTimeout(() => {
+                statusBox.classList.add('hidden');
+            }, 8000);
+        }
+
+        // 6. REGISTRATION MODAL SYSTEM
+        function openRegisterModal() {
+            document.getElementById('registerModal').classList.remove('hidden');
+        }
+
+        function closeRegisterModal() {
+            document.getElementById('registerModal').classList.add('hidden');
+        }
+
+        function handleModalSubmit(event) {
+            event.preventDefault();
+            const statusBox = document.getElementById('modalStatus');
+            statusBox.className = "p-3 rounded-xl text-center text-[10px] tracking-widest font-bold bg-emerald-50 text-emerald-800 border border-emerald-200";
+            statusBox.innerText = "🐋 APPLICATION COMPLETED. CONNECTING WITH MIAMI PLACEMENTS BOARD.";
+            statusBox.classList.remove('hidden');
+
+            setTimeout(() => {
+                closeRegisterModal();
+                statusBox.classList.add('hidden');
+                document.getElementById('modalForm').reset();
+            }, 3000);
+        }
+
+        // 7. AMBIENT WATER BUBBLES
+        function createHeroBubbles() {
+            const container = document.getElementById('heroBubbles');
+            if (!container) return;
+
+            const bubbleCount = 10;
+            for (let i = 0; i < bubbleCount; i++) {
+                const bubble = document.createElement('div');
+                bubble.classList.add('bubble');
+                
+                const size = Math.random() * 20 + 8;
+                bubble.style.width = `${size}px`;
+                bubble.style.height = `${size}px`;
+                bubble.style.left = `${Math.random() * 100}%`;
+                bubble.style.animationDelay = `${Math.random() * 10}s`;
+                bubble.style.animationDuration = `${Math.random() * 8 + 8}s`;
+
+                container.appendChild(bubble);
+            }
+        }
+
+        // Initialize all components
+        window.onload = function() {
+            createHeroBubbles();
+            
+            // Auto-trigger video element
+            const video = document.getElementById('heroVideo');
+            if (video) {
+                video.play().catch(error => {
+                    console.log("Auto-play suspended. Interactivity enabled.");
+                });
+            }
+        };
+    </script>
+
+    <!-- Path utility reference for continuous CSS wave generation -->
+    <svg class="hidden">
+        <defs>
+            <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+    </svg>
+</body>
+</html>
